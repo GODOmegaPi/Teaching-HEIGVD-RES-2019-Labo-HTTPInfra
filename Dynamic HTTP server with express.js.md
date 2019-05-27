@@ -2,3 +2,6 @@
 
 ## Procedure
 
+```sh
+docker build -t res/express_students .
+```
