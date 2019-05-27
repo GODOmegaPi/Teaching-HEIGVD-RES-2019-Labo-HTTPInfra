@@ -5,7 +5,7 @@ let chance = new c();
 let app = express();
 
 app.get('/', (req, res) => {
-    res.send(generateStudents());
+    res.send(generateAnimals());
 });
 
 app.listen(3000, () => {
@@ -13,30 +13,19 @@ app.listen(3000, () => {
 });
 
 
-function generateStudents(){
-    var numberOfStudents = chance.integer({
-        min: 0,
-        max: 10
+function generateAnimals(){
+    var numberOfAnimals = chance.integer({
+        min: 1,
+        max: 20
     });
-    console.log(numberOfStudents);
-    let students = [];
-    for(var i = 0; i < numberOfStudents; i++){
-        let gender = chance.gender();
-        let birthYear = chance.year({
-            min: 1986,
-            max: 1996
-        });
-        students.push({
-            firstName: chance.first({
-                gender: gender
-            }),
-            lastName: chance.last(),
-            gender: gender,
-            birthday: chance.birthday({
-                year: birthYear
-            })
+    console.log(numberOfAnimals);
+    let animals = [];
+    for(var i = 0; i < numberOfAnimals; i++){
+        animals.push({
+            animal: chance.animal(),
+            gender: chance.gender()
         });
     }
-    console.log(students);
-    return students;
+    console.log(animals);
+    return animals;
 }
