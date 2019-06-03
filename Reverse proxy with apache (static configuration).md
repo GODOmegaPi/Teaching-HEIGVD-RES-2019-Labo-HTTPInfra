@@ -49,7 +49,7 @@ apt-get install vim
         ProxyPassReverse "/" "http://172.17.0.2:80/"
 </VirtualHost>
 ```
-* Know, to enbale the site, you need to go to `/etc/apache2/` en use
+* Know, to enbale the site, you need to go to `/etc/apache2/` and use
 ```sh
 a2ensite 001*
 service apache2 reload
