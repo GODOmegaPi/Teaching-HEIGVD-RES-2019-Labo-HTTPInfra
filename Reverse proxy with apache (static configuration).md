@@ -25,7 +25,7 @@ docker-machine ssh
 
 ## Reverse proxy conf
 
-* First, copy the `000-default.conf` file located at `/etc/apache2/sites-available` whith the name `001-reverse-proxy.conf`
+* First, copy the `000-default.conf` file located at `/etc/apache2/sites-available` with the name `001-reverse-proxy.conf`
 ```sh
 cp 000-default.conf 001-reverse-proxy.conf
 ```
@@ -49,7 +49,7 @@ apt-get install vim
         ProxyPassReverse "/" "http://172.17.0.2:80/"
 </VirtualHost>
 ```
-* Know, to enbale the site, you need to go to `/etc/apache2/` and use
+* Now, to enable the site, you need to go to `/etc/apache2/` and use
 ```sh
 a2ensite 001*
 service apache2 reload
