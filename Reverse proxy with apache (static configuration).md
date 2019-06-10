@@ -60,3 +60,38 @@ a2enmod proxy
 a2enmod proxy_http
 service apache2 reload
 ```
+* Now the only last things to do: create a Dockerfile and create a config folder with our reverse proxy config for the Apach server. For the Dockerfile, use:
+```sh
+FROM php:7.2-apache
+
+COPY conf/ /etc/apache2
+
+RUN apt update && apt install -y vim
+RUN a2enmod proxy proxy_http
+RUN a2ensite 000-* 001-*
+```
+And for the config folder named `conf`, create a structure like this:
+```
+/conf
+| - sites-available
+    | - 000-default.conf
+    | - 001-reverse-proxy.conf
+```
+* In the file `000-default.conf` put:
+```sh
+<VirtualHost *:80>
+</VirtualHost>
+```
+* And in the file `001-reverse-proxy.conf` put:
+```sh
+<VirtualHost *:80>
+        ServerName demo.res.ch
+
+        ProxyPass "/api/animals/" "http://172.17.0.2:3000/"
+        ProxyPassReverse "/api/animals/" "http://172.17.0.2:3000/"
+
+        ProxyPass "/" "http://172.17.0.3:80/"
+        ProxyPassReverse "/" "http://172.17.0.3:80/"
+
+</VirtualHost>
+```
