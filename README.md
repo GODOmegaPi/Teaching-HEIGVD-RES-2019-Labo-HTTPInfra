@@ -7,19 +7,19 @@ Simon Walther
 ## Documentation
 Each step of this lab are documented in Markdown files :
 
-[Static HTTP server with apache httpd](Static HTTP server with apache httpd.md)
+[Static HTTP server with apache httpd](StaticHTTPServerWithApacheHTTPD.md)
 
-[Dynamic HTTP server with express.js]('Dynamic HTTP server with express.js.md')
+[Dynamic HTTP server with express.js](DynamicHTTPServerWithExpressJs.md)
 
-[Reverse proxy with apache (static configuration)]('Reverse proxy with apache (static configuration.md'))
+[Reverse proxy with apache (static configuration)](ReverseProxyWithApacheStaticConfiguration.md)
 
-[Ajax requests with Jquery]('Ajax requests with Jquery.md')
+[Ajax requests with Jquery](AjaxRequestsWithJquery.md)
 
-[Dynamic reverse proxy configuration]('Dynamic reverse proxy configuration.md')
+[Dynamic reverse proxy configuration](DynamicReverseProxyConfiguration.md)
 
-[Multiple Server Nodes]('Multiple Server Nodes.md')
+[Multiple Server Nodes](MultipleServerNodes.md)
 
-[Dynamic cluster management]('Dynamic cluster management.md')
+[Dynamic cluster management](DynamicClusterManagement.md)
 
 
 
