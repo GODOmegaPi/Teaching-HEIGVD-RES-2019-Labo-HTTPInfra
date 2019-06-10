@@ -21,6 +21,7 @@ Each step of this lab are documented in Markdown files :
 
 [Dynamic cluster management](DynamicClusterManagement.md)
 
+[Management UI](ManagementUI.md)
 
 
 
